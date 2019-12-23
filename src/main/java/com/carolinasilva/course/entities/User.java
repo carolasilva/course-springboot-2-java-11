@@ -1,5 +1,6 @@
 package com.carolinasilva.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class User implements Serializable {
   private String phone;
   private String password;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "client")
   private List<Order> orders = new ArrayList<>();
 
